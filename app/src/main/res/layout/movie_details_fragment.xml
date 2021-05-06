@@ -8,7 +8,8 @@
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
-        android:layout_height="wrap_content">
+        android:layout_height="wrap_content"
+        android:layout_margin="@dimen/margin">
 
         <ImageView
             android:id="@+id/poster"
@@ -16,8 +17,8 @@
             android:layout_height="wrap_content"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent"
-            android:layout_margin="@dimen/margin"
-            app:srcCompat="@android:drawable/ic_menu_gallery" />
+            app:srcCompat="@android:drawable/ic_menu_gallery"
+            android:contentDescription="@string/movie_poster" />
 
         <TextView
             android:id="@+id/title"
@@ -157,7 +158,6 @@
             app:layout_constraintStart_toEndOf="@id/votes_label"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintBaseline_toBaselineOf="@id/score_label"
-            android:layout_marginRight="@dimen/margin"
             android:gravity="center"
             android:text="@string/boxoffice_labely"
             style="@style/label"/>
