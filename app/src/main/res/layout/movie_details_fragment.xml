@@ -1,0 +1,269 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".ui.moviedetails.MovieDetailsFragment">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <ImageView
+            android:id="@+id/poster"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            android:layout_margin="@dimen/margin"
+            app:srcCompat="@android:drawable/ic_menu_gallery" />
+
+        <TextView
+            android:id="@+id/title"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:layout_constraintStart_toStartOf="@id/poster"
+            app:layout_constraintTop_toBottomOf="@id/poster"
+            android:layout_marginTop="@dimen/margin"
+            android:textSize="22sp"
+            android:textStyle="bold"
+            android:textColor="#000"
+            tools:text="title" />
+
+        <TextView
+            android:id="@+id/year"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:layout_constraintStart_toStartOf="@id/title"
+            app:layout_constraintTop_toBottomOf="@id/title"
+            style="@style/field_emphasis"
+            tools:text="year" />
+
+        <View
+            android:id="@+id/separator1"
+            android:layout_width="0dp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/year"
+            style="@style/separator"/>
+
+        <TextView
+            android:id="@+id/categories"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            app:layout_constraintStart_toStartOf="@id/poster"
+            app:layout_constraintEnd_toStartOf="@id/runtime"
+            app:layout_constraintTop_toBottomOf="@id/separator1"
+            android:layout_marginTop="@dimen/margin"
+            style="@style/description"
+            tools:text="categories" />
+
+        <TextView
+            android:id="@+id/runtime"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            app:layout_constraintStart_toEndOf="@id/categories"
+            app:layout_constraintEnd_toStartOf="@id/language"
+            app:layout_constraintBaseline_toBaselineOf="@id/categories"
+            android:layout_marginStart="@dimen/margin"
+            android:layout_marginEnd="@dimen/margin"
+            android:gravity="center"
+            style="@style/description"
+            tools:text="categories" />
+
+        <TextView
+            android:id="@+id/language"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            app:layout_constraintStart_toEndOf="@id/runtime"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintBaseline_toBaselineOf="@id/categories"
+            android:gravity="center"
+            style="@style/description"
+            tools:text="language" />
+
+        <TextView
+            android:id="@+id/synopsis_label"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:layout_constraintStart_toStartOf="@id/poster"
+            app:layout_constraintTop_toBottomOf="@id/categories"
+            android:layout_marginTop="@dimen/margin"
+            android:text="@string/synopsis"
+            style="@style/label"/>
+
+        <TextView
+            android:id="@+id/synopsis"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            app:layout_constraintStart_toStartOf="@id/synopsis_label"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/synopsis_label"
+            style="@style/description"
+            tools:text="synopsis" />
+
+
+        <TextView
+            android:id="@+id/score_label"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            app:layout_constraintStart_toStartOf="@id/poster"
+            app:layout_constraintEnd_toStartOf="@id/votes_label"
+            app:layout_constraintTop_toBottomOf="@id/synopsis"
+            android:layout_marginTop="@dimen/margin"
+            android:gravity="center"
+            android:text="@string/score"
+            style="@style/label"/>
+
+        <TextView
+            android:id="@+id/score"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            app:layout_constraintStart_toStartOf="@id/score_label"
+            app:layout_constraintEnd_toEndOf="@id/score_label"
+            app:layout_constraintTop_toBottomOf="@id/score_label"
+            android:gravity="center"
+            style="@style/field_emphasis"
+            tools:text="score" />
+
+        <TextView
+            android:id="@+id/votes_label"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            app:layout_constraintStart_toEndOf="@id/score_label"
+            app:layout_constraintEnd_toStartOf="@id/boxoffice_label"
+            app:layout_constraintBaseline_toBaselineOf="@id/score_label"
+            android:layout_marginTop="@dimen/margin"
+            android:gravity="center"
+            android:text="@string/votes"
+            style="@style/label"/>
+
+        <TextView
+            android:id="@+id/votes"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            app:layout_constraintStart_toStartOf="@id/votes_label"
+            app:layout_constraintEnd_toEndOf="@id/votes_label"
+            app:layout_constraintTop_toBottomOf="@id/votes_label"
+            android:gravity="center"
+            style="@style/field_emphasis"
+            tools:text="votes" />
+
+        <TextView
+            android:id="@+id/boxoffice_label"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            app:layout_constraintStart_toEndOf="@id/votes_label"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintBaseline_toBaselineOf="@id/score_label"
+            android:layout_marginRight="@dimen/margin"
+            android:gravity="center"
+            android:text="@string/boxoffice_labely"
+            style="@style/label"/>
+
+        <TextView
+            android:id="@+id/boxoffice"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            app:layout_constraintStart_toStartOf="@id/boxoffice_label"
+            app:layout_constraintEnd_toEndOf="@id/boxoffice_label"
+            app:layout_constraintTop_toBottomOf="@id/boxoffice_label"
+            android:gravity="center"
+            style="@style/field_emphasis"
+            tools:text="box office" />
+
+        <View
+            android:id="@+id/separator2"
+            android:layout_width="0dp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/score"
+            style="@style/separator"/>
+
+        <TextView
+            android:id="@+id/director_label"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            app:layout_constraintStart_toStartOf="@id/poster"
+            app:layout_constraintEnd_toEndOf="@id/barrierEnd"
+            app:layout_constraintTop_toBottomOf="@id/separator2"
+            app:layout_constraintWidth_min="wrap"
+            android:layout_marginTop="@dimen/margin"
+            android:gravity="end"
+            android:text="@string/director"
+            style="@style/label"/>
+
+        <TextView
+            android:id="@+id/writer_label"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            app:layout_constraintStart_toStartOf="@id/poster"
+            app:layout_constraintEnd_toEndOf="@id/barrierEnd"
+            app:layout_constraintTop_toBottomOf="@id/director"
+            app:layout_constraintWidth_min="wrap"
+            android:gravity="end"
+            android:text="@string/writer"
+            style="@style/label"/>
+
+        <TextView
+            android:id="@+id/actors_label"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            app:layout_constraintStart_toStartOf="@id/poster"
+            app:layout_constraintEnd_toEndOf="@id/barrierEnd"
+            app:layout_constraintTop_toBottomOf="@id/writer"
+            app:layout_constraintWidth_min="wrap"
+            android:gravity="end"
+            android:text="@string/actors"
+            style="@style/label"/>
+
+        <androidx.constraintlayout.widget.Barrier
+            android:id="@+id/barrierEnd"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            app:barrierDirection="end"
+            app:constraint_referenced_ids="director_label, writer_label, actors_label"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:id="@+id/director"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            app:layout_constraintStart_toEndOf="@id/director_label"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintBaseline_toBaselineOf="@id/director_label"
+            style="@style/field"
+            tools:text="direcotr" />
+
+        <TextView
+            android:id="@+id/writer"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            app:layout_constraintStart_toEndOf="@id/writer_label"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintBaseline_toBaselineOf="@id/writer_label"
+            style="@style/field"
+            tools:text="writer" />
+
+        <TextView
+            android:id="@+id/actors"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            app:layout_constraintStart_toEndOf="@id/actors_label"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintBaseline_toBaselineOf="@id/actors_label"
+            style="@style/field"
+            tools:text="actors" />
+
+        <View
+            android:id="@+id/separator3"
+            android:layout_width="0dp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/actors"
+            style="@style/separator"/>
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</ScrollView>

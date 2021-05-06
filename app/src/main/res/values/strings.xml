@@ -1,0 +1,17 @@
+<resources>
+    <string name="app_name">SquareOne Test</string>
+    <string name="empty_result">No match found</string>
+    <string name="enter_movie_name">Enter movie name</string>
+    <string name="movie_poster">Movie Poster</string>
+    <string name="year">Year</string>
+    <string name="director">Director</string>
+    <string name="writer">Writer</string>
+    <string name="actors">Actors</string>
+    <string name="synopsis">Synopsis</string>
+    <string name="categories">Categories</string>
+    <string name="score">Score</string>
+    <string name="reviews">Reviews</string>
+    <string name="popularity">Popularity</string>
+    <string name="votes">Votes</string>
+    <string name="boxoffice_labely">Box Office</string>
+</resources>
