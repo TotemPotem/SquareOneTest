@@ -28,7 +28,7 @@ class MovieDetailsFragment: Fragment() {
         super.onViewCreated(view, savedInstanceState)
         viewModel.movie.observe(viewLifecycleOwner, Observer {
             if (it!=null) {
-                Picasso.with(view.context).load(it.poster).into(binding.poster)
+                if (it.hasPoster()) Picasso.with(view.context).load(it.poster).into(binding.poster)
                 binding.title.text = it.title
                 binding.year.text = it.year.toString()
                 binding.categories.text = it.categories

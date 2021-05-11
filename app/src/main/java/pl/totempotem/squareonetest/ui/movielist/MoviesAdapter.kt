@@ -4,6 +4,7 @@ import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
 import com.squareup.picasso.Picasso
+import pl.totempotem.squareonetest.R
 import pl.totempotem.squareonetest.databinding.MovieListItemBinding
 import pl.totempotem.squareonetest.model.Movie
 
@@ -22,7 +23,8 @@ class MoviesAdapter(private val listener: MovieClickListener): RecyclerView.Adap
             this.movie = movie
             binding.root.setOnClickListener { listener.onMovieClick(movie.id) }
             binding.title.text = movie.title
-            Picasso.with(itemView.context).load(movie.poster).into(binding.poster)
+            if (movie.hasPoster()) Picasso.with(itemView.context).load(movie.poster).into(binding.poster)
+            else binding.poster.setImageResource(R.drawable.no_poster)
         }
     }
 

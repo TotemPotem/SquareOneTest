@@ -16,5 +16,7 @@ data class Movie(
     @SerializedName("imdbRating")  val score: String,
     @SerializedName("imdbVotes")  val votes: String,
     @SerializedName("BoxOffice")  val boxOffice: String,
-    @SerializedName("Runtime")  val runtime: String
-);
+    @SerializedName("Runtime")  val runtime: String) {
+
+    fun hasPoster(): Boolean = poster!="N/A"
+}
