@@ -41,7 +41,7 @@ class MovieListFragment: Fragment(), MoviesAdapter.MovieClickListener {
                 if (result.page==1) adapter.setItems(result.movies)
                 else adapter.addItems(result.movies)
             }
-            else {
+            else if (result.page==1) {
                 adapter.clearItems()
                 binding.empty.visibility = View.VISIBLE
             }

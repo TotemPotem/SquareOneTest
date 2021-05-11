@@ -26,11 +26,6 @@ class MovieDetailsFragment: Fragment() {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
-        arguments?.getString("id")?.let {
-            println(id)
-            viewModel.fetch(it)
-        }
-
         viewModel.movie.observe(viewLifecycleOwner, Observer {
             if (it!=null) {
                 Picasso.with(view.context).load(it.poster).into(binding.poster)
@@ -49,6 +44,10 @@ class MovieDetailsFragment: Fragment() {
 
             }
         })
+
+        arguments?.getString("id")?.let {
+            viewModel.fetch(it)
+        }
     }
 
 }
